@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Nairobi E-Mobility Siting Tool</title>
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+  <div id="app">
+    <aside id="sidebar">
+      <h1>Nairobi E-Mobility Siting</h1>
+      <div class="layer-toggle">
+        <label><input type="checkbox" id="toggle-infra" checked /> Existing infrastructure</label>
+        <label><input type="checkbox" id="toggle-need" checked /> Need-score choropleth</label>
+        <label><input type="checkbox" id="toggle-sites" checked /> Proposed sites (phased)</label>
+        <label><input type="checkbox" id="toggle-transit" /> Transit frequency</label>
+      </div>
+      <div id="legend">
+        <div class="legend-section">
+          <h4>Need Score</h4>
+          <div class="legend-gradient"></div>
+          <div class="legend-labels"><span>Low</span><span>High</span></div>
+        </div>
+        <div class="legend-section">
+          <h4>Existing Infrastructure</h4>
+          <div class="legend-row"><span class="swatch" style="background:#1d3557"></span> Bus charging</div>
+          <div class="legend-row"><span class="swatch" style="background:#457b9d"></span> E-bike / swap</div>
+          <div class="legend-row"><span class="swatch" style="background:#a8dadc"></span> Private car</div>
+        </div>
+        <div class="legend-section">
+          <h4>Proposed Sites</h4>
+          <div class="legend-row"><span class="swatch round" style="background:#e63946"></span> Phase 1: needed now</div>
+          <div class="legend-row"><span class="swatch round" style="background:#f4a261"></span> Phase 2: emerging need</div>
+          <div class="legend-row"><span class="swatch round" style="background:#2a9d8f"></span> Phase 3: monitor</div>
+        </div>
+      </div>
+      <div id="transit-band" style="display:none">
+        <label>Transit band:
+          <select id="transit-select">
+            <option value="vph_am_peak">AM peak (06:00–09:00)</option>
+            <option value="vph_midday">Midday (09:00–15:00)</option>
+            <option value="vph_pm_peak">PM peak (15:00–21:00)</option>
+          </select>
+        </label>
+      </div>
+      <div id="info-panel">
+        <p class="hint">Click a proposed site for its AI-generated rationale.</p>
+      </div>
+      <canvas id="phase-chart" height="180"></canvas>
+    </aside>
+    <div id="map"></div>
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

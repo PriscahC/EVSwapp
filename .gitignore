@@ -1,0 +1,12 @@
+# Virtual environment
+venv/
+
+# Data & Large Files
+data/
+cache/
+*.tif
+*.zip
+*.tar.gz
+
+# Node / dependencies
+node_modules/

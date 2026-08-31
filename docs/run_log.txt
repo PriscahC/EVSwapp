@@ -1,0 +1,222 @@
+NAIROBI E-MOBILITY HACKATHON — RUN LOG
+========================================
+
+[Step 1-6: Setup]
+- Created project folder nairobi-emobility-hackathon, venv, installed
+  pandas geopandas h3 osmnx requests rasterio rasterstats
+- geopandas 1.1.4 installed cleanly (no build issues)
+
+--- analysis\01_pull_roads.py ---
+Downloading road network for Nairobi, Kenya...
+Saved road segments to data/raw/nairobi_roads.geojson
+(re-run required after moving to project root — see note below)
+
+--- analysis\02_get_boundary.py ---
+Fetching boundary for Nairobi, Kenya...
+Saved boundary to data/raw/nairobi_boundary.geojson
+[36.6647016 -1.4448822 37.1048735 -1.1606749]
+
+--- analysis\03_pull_population.py ---
+Downloading WorldPop Kenya population raster (~36 MB)...
+Saved to data/raw/ken_population_2020.tif
+
+--- analysis\04_build_h3_grid.py ---
+Generated 865 H3 res-8 hexagons covering Nairobi
+Saved to data/processed/nairobi_h3_grid.geojson
+
+--- analysis\05_add_population.py ---
+Running zonal stats — this sums raster population values inside each hexagon...
+Total population across all hexagons: 4,619,988
+Top 5 most populated hexagons:
+              hex_id     population
+680  887a6e404bfffff  110404.070312
+606  887a6e55e9fffff   88508.296875
+441  887a6e4237fffff   81354.375000
+755  887a6e4233fffff   80959.765625
+304  887a6e4315fffff   65684.750000
+Updated data/processed/nairobi_h3_grid.geojson with population column
+
+--- analysis\06_pull_transit.py ---
+Downloading Nairobi GTFS feed...
+Extracting...
+Files extracted: ['agency.txt', 'calendar.txt', 'calendar_dates.txt', 'feed_info.txt',
+'frequencies.txt', 'routes.txt', 'shapes.txt', 'stops.txt', 'stop_times.txt', 'trips.txt']
+
+--- analysis\07_inspect_gtfs.py ---
+STOPS: (4284, 6)
+   stop_id           stop_name  stop_lat   stop_lon
+0  0001RLW            Railways -1.290884  36.828242
+1  0002KOJ                Koja -1.281230  36.822596
+2  0003NGR               Ngara -1.274395  36.823806
+3  0004ODN               Odeon -1.282769  36.825032
+4  0005AMB  Kencom/Ambassadeur -1.285963  36.826048
+ROUTES: (136, 5)
+TRIPS: (272, 6)
+      route_id service_id   trip_id trip_headsign  direction_id  shape_id
+0  10000107D11      DAILY  1107D110         Ruaka             0  1107D110
+1  10000107D11      DAILY  1107D111         Ruiru             1  1107D111
+2  10000114011      DAILY  10114110         Ngara             0  10114110
+3  10000114011      DAILY  10114111        Limuru             1  10114111
+4  10000116011      DAILY  10116110          Koja             0  10116110
+FREQUENCIES: (792, 4)
+    trip_id start_time  end_time  headway_secs
+0  10106110   06:00:00  09:00:00           300
+1  10106110   09:00:00  15:00:00           900
+2  10106110   15:00:00  21:00:00           300
+...
+Unique start_times in frequencies.txt (time bands used by Digital Matatus):
+['06:00:00', '09:00:00', '15:00:00']
+--> AM peak 06:00-09:00, midday off-peak 09:00-15:00, PM peak 15:00-21:00
+
+--- analysis\08_transit_frequency.py ---
+4086 stops with frequency data
+               stop_name  vph_am_peak  vph_midday  vph_pm_peak
+953                Odeon        336.0       112.0        336.0
+220                 Koja        264.0        88.0        264.0
+2489                Agip        240.0        80.0        240.0
+946                  OTC        204.0        68.0        204.0
+2854         Bus Station        204.0        68.0        204.0
+1813            Kaloleni        192.0        64.0        192.0
+2056         Church Army        192.0        64.0        192.0
+2061  Kencom/Ambassadeur        180.0        60.0        180.0
+1984              Maziwa        180.0        60.0        180.0
+1780        City Stadium        180.0        60.0        180.0
+Saved to data/processed/nairobi_stop_frequency.geojson
+
+--- CSV enrichment (charging infrastructure, done outside analysis/ scripts) ---
+nairobi_ev_charging_swap_infrastructure.csv: 20 -> 29 rows
+Added: data_layer column (point_station / network_density)
+Added: Ampersand Hurlingham + Mountain View rows (Mountain View flagged as
+co-located with Roam Hub - Waiyaki Way)
+Added: 7 car-charger rows (Sarit Centre, Village Market, UNGA House,
+KCB Towers, Britam Towers, Adlife Kilimani, Karen) - operator unconfirmed,
+community-sourced
+Added: priority_weight column (3=bus, 2=e-bike/motorcycle swap, 1=car charging)
+per Avoid-Shift-Improve framework
+Flagged: eWAKA Kileleshwa row as low-confidence (operations site, not
+confirmed swap point)
+
+========================================
+[Continued below by Tee-Object going forward]
+09_join_transit_to_hex.py
+347 of 865 hexagons have transit stops
+              hex_id    population  vph_am_peak  vph_pm_peak
+687  887a6e42c1fffff   5735.345703       1824.0       1824.0
+565  887a6e4219fffff  13563.146484       1248.0       1248.0
+340  887a6e421bfffff  21944.896484        996.0        996.0
+581  887a6e4235fffff  29207.796875        996.0        996.0
+709  887a6e435dfffff  55550.492188        960.0        960.0
+Updated nairobi_h3_grid.geojson with transit frequency columns
+
+========================================
+>py analysis\10_need_analysis.py
+Total point_stations loaded: 27
+Stations successfully matched to a hexagon: 26
+Hexagons with existing_coverage > 0: 23 of 865
+              hex_id  existing_coverage
+85   887a6e5583fffff                2.0
+221  887a6e42ebfffff                2.0
+229  887a6e51b7fffff                2.0
+258  887a6e426bfffff                3.0
+262  887a6e42e9fffff                2.0
+266  887a6e55a9fffff                2.0
+284  887a6e54b1fffff                1.0
+318  887a6e5521fffff                4.0
+330  887a6e55ebfffff                2.0
+354  887a6e476dfffff                2.0
+
+Top 10 highest-need hexagons:
+              hex_id     population  peak_transit_vph  existing_coverage  need_score
+680  887a6e404bfffff  110404.070312              36.0                0.0    0.607895
+755  887a6e4233fffff   80959.765625             432.0                0.0    0.534719
+709  887a6e435dfffff   55550.492188             960.0                0.0    0.512420
+606  887a6e55e9fffff   88508.296875               0.0                0.0    0.481006
+441  887a6e4237fffff   81354.375000             132.0                0.0    0.471074
+687  887a6e42c1fffff    5735.345703            1824.0                0.0    0.431169
+410  887a6e42e1fffff   41395.210938             864.0                0.0    0.414439
+308  887a6e4041fffff   62204.078125             348.0                0.0    0.414369
+304  887a6e4315fffff   65684.750000             228.0                0.0    0.406969
+519  887a6e4049fffff   58278.070312             384.0                0.0    0.400927
+Saved need_score to nairobi_h3_grid.geojson
+
+
+==========================================
+py analysis\11_export_proposed_sites.py
+Exported 20 proposed sites
+ rank                           recommended_infrastructure    population  need_score
+    1  E-bike/motorcycle swap station (residential demand) 110404.070312    0.607895
+    2 Bus charging depot (high-frequency transit corridor)  80959.765625    0.534719
+    3 Bus charging depot (high-frequency transit corridor)  55550.492188    0.512420
+    4  E-bike/motorcycle swap station (residential demand)  88508.296875    0.481006
+    5 Bus charging depot (high-frequency transit corridor)  81354.375000    0.471074
+    6 Bus charging depot (high-frequency transit corridor)   5735.345703    0.431169
+    7 Bus charging depot (high-frequency transit corridor)  41395.210938    0.414439
+    8 Bus charging depot (high-frequency transit corridor)  62204.078125    0.414369
+    9 Bus charging depot (high-frequency transit corridor)  65684.750000    0.406969
+   10 Bus charging depot (high-frequency transit corridor)  58278.070312    0.400927
+   11 Bus charging depot (high-frequency transit corridor)  45585.289062    0.389842
+   12 Bus charging depot (high-frequency transit corridor)  50831.187500    0.386773
+   13 Bus charging depot (high-frequency transit corridor)  29207.796875    0.377153
+   14 Bus charging depot (high-frequency transit corridor)  30547.888672    0.363383
+   15 Bus charging depot (high-frequency transit corridor)  39295.023438    0.347763
+   16 Bus charging depot (high-frequency transit corridor)  13563.146484    0.347394
+   17 Bus charging depot (high-frequency transit corridor)  21944.896484    0.337682
+   18 Bus charging depot (high-frequency transit corridor)  29621.445312    0.332033
+   19 Bus charging depot (high-frequency transit corridor)  40549.917969    0.330898
+   20 Bus charging depot (high-frequency transit corridor)  53116.695312    0.307088
+
+
+-------------------
+   >py analysis\12_predict_growth.py
+Downloading 2015 unconstrained population raster...
+  -> saved to data\raw\ken_ppp_2015_UNadj_unconstrained.tif
+Downloading 2020 unconstrained population raster...
+  -> saved to data\raw\ken_ppp_2020_UNadj_unconstrained.tif
+Zonal population sums, unconstrained 2015...
+Zonal population sums, unconstrained 2020...
+Wrote data\processed\nairobi_h3_grid_with_growth.geojson
+pilot_phase
+Not phased (low current + low growth)    523
+Phase 1: needed now                      289
+Phase 2: compounding demand               51
+Phase 3: get ahead of growth               2
+Name: count, dtype: int64
+
+Top 10 hexagons by predicted growth (2020 -> mid-2026):
+        population  need_score  cagr_2015_2020  growth_delta          pilot_phase
+680  110404.070312    0.607895        0.027544  21327.078849  Phase 1: needed now
+606   88508.296875    0.481006        0.029009  18079.882400  Phase 1: needed now
+441   81354.375000    0.471074        0.025732  14608.098360  Phase 1: needed now
+308   62204.078125    0.414369        0.030848  13581.094468  Phase 1: needed now
+755   80959.765625    0.534719        0.023373  13118.737907  Phase 1: needed now
+519   58278.070312    0.400927        0.028269  11577.276899  Phase 1: needed now
+330   59378.128906    0.165295        0.027104  11273.361025  Phase 1: needed now
+456   54447.796875    0.295901        0.029176  11191.232600  Phase 1: needed now
+12    50831.187500    0.386773        0.029293  10493.287358  Phase 1: needed now
+304   65684.750000    0.406969        0.022137  10046.373992  Phase 1: needed now
+
+==================================
+
+
+(venv) C:\Users\opiyo\Pictures\nairobi-emobility-hackathon>py analysis\13_phase_sites.py
+    rank                         recommended_infrastructure     population  need_score  growth_delta pilot_month_block
+0      1  E-bike/motorcycle swap station (residential de...  110404.070312    0.607895  21327.078849        Months 1-2
+1      2  Bus charging depot (high-frequency transit cor...   80959.765625    0.534719  13118.737907        Months 1-2
+2      3  Bus charging depot (high-frequency transit cor...   55550.492188    0.512420   7775.503279        Months 1-2
+3      4  E-bike/motorcycle swap station (residential de...   88508.296875    0.481006  18079.882400        Months 1-2
+4      5  Bus charging depot (high-frequency transit cor...   81354.375000    0.471074  14608.098360        Months 1-2
+5      6  Bus charging depot (high-frequency transit cor...    5735.345703    0.431169   1391.168709        Months 1-2
+6      7  Bus charging depot (high-frequency transit cor...   41395.210938    0.414439   8619.970181        Months 1-2
+7      8  Bus charging depot (high-frequency transit cor...   62204.078125    0.414369  13581.094468        Months 3-4
+8      9  Bus charging depot (high-frequency transit cor...   65684.750000    0.406969  10046.373992        Months 3-4
+9     10  Bus charging depot (high-frequency transit cor...   58278.070312    0.400927  11577.276899        Months 3-4
+10    11  Bus charging depot (high-frequency transit cor...   45585.289062    0.389842   9692.385689        Months 3-4
+11    12  Bus charging depot (high-frequency transit cor...   50831.187500    0.386773  10493.287358        Months 3-4
+12    13  Bus charging depot (high-frequency transit cor...   29207.796875    0.377153   4926.520317        Months 3-4
+13    14  Bus charging depot (high-frequency transit cor...   30547.888672    0.363383   7716.769531        Months 3-4
+14    15  Bus charging depot (high-frequency transit cor...   39295.023438    0.347763   5147.663286        Months 5-6
+15    16  Bus charging depot (high-frequency transit cor...   13563.146484    0.347394   2778.824955        Months 5-6
+16    17  Bus charging depot (high-frequency transit cor...   21944.896484    0.337682   4423.588411        Months 5-6
+17    18  Bus charging depot (high-frequency transit cor...   29621.445312    0.332033   8292.767486        Months 5-6
+18    19  Bus charging depot (high-frequency transit cor...   40549.917969    0.330898   7669.698061        Months 5-6
+19    20  Bus charging depot (high-frequency transit cor...   53116.695312    0.307088   8820.466811        Months 5-6

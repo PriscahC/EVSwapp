@@ -1,0 +1,603 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8422,
+          -1.3048
+        ]
+      },
+      "properties": {
+        "operator": "Roam",
+        "site_name": "Roam Hub – Lusaka Road",
+        "infrastructure_type": "Battery swap + motorcycle charging",
+        "address_or_area": "TotalEnergies Lusaka Road, Industrial Area, Nairobi",
+        "priority_weight": 2,
+        "verification_note": "Confirmed operator/location source; coordinates are locality-level geocodes, not surveyed pins.",
+        "source_url": "https://www.roam-electric.com/charging",
+        "total_slots": 4,
+        "available_now": 0,
+        "est_wait_min": 15,
+        "data_note": "location/type/operator fields are real & verified; total_slots/available_now/est_wait_min are DUMMY prototype values, not live data"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.864,
+          -1.2825
+        ]
+      },
+      "properties": {
+        "operator": "Roam",
+        "site_name": "Roam Hub – Karambee",
+        "infrastructure_type": "Battery swap",
+        "address_or_area": "Karambee/Juja Road area, Nairobi",
+        "priority_weight": 2,
+        "verification_note": "Location confirmed by Roam/Electric KE; coordinates are approximate.",
+        "source_url": "https://www.roam-electric.com/charging",
+        "total_slots": 5,
+        "available_now": 1,
+        "est_wait_min": 0,
+        "data_note": "location/type/operator fields are real & verified; total_slots/available_now/est_wait_min are DUMMY prototype values, not live data"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.793,
+          -1.245
+        ]
+      },
+      "properties": {
+        "operator": "Roam",
+        "site_name": "Roam Hub – Suguta Centre",
+        "infrastructure_type": "Battery swap",
+        "address_or_area": "Suguta Centre, Nairobi",
+        "priority_weight": 2,
+        "verification_note": "Location confirmed by Roam/Electric KE; coordinates are approximate.",
+        "source_url": "https://www.roam-electric.com/charging",
+        "total_slots": 5,
+        "available_now": 5,
+        "est_wait_min": 0,
+        "data_note": "location/type/operator fields are real & verified; total_slots/available_now/est_wait_min are DUMMY prototype values, not live data"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.884,
+          -1.291
+        ]
+      },
+      "properties": {
+        "operator": "Roam",
+        "site_name": "Roam Hub – Outering Road",
+        "infrastructure_type": "Battery swap + Type 2 charging",
+        "address_or_area": "TotalEnergies Outering Road, Nairobi",
+        "priority_weight": 2,
+        "verification_note": "Location confirmed by Electric KE; coordinates are approximate.",
+        "source_url": "https://www.roam-electric.com/charging",
+        "total_slots": 4,
+        "available_now": 4,
+        "est_wait_min": 0,
+        "data_note": "location/type/operator fields are real & verified; total_slots/available_now/est_wait_min are DUMMY prototype values, not live data"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.919,
+          -1.279
+        ]
+      },
+      "properties": {
+        "operator": "Roam",
+        "site_name": "Roam Hub – Kayole Spine Road",
+        "infrastructure_type": "Battery swap + EV charging",
+        "address_or_area": "Kayole Spine Road, Kayole, Nairobi",
+        "priority_weight": 2,
+        "verification_note": "Roam confirms hub; Electric KE lists battery swap. Coordinates are approximate.",
+        "source_url": "https://www.roam-electric.com/newsletter-roam-hub-kayole",
+        "total_slots": 4,
+        "available_now": 4,
+        "est_wait_min": 0,
+        "data_note": "location/type/operator fields are real & verified; total_slots/available_now/est_wait_min are DUMMY prototype values, not live data"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8865,
+          -1.2215
+        ]
+      },
+      "properties": {
+        "operator": "Roam",
+        "site_name": "Roam Hub – Roysambu (QuickMart)",
+        "infrastructure_type": "Battery swap",
+        "address_or_area": "QuickMart Roysambu, Nairobi",
+        "priority_weight": 2,
+        "verification_note": "Roam confirms QuickMart partnership/site; coordinates are approximate.",
+        "source_url": "https://www.roam-electric.com/newsletter-quickmart-partnership",
+        "total_slots": 8,
+        "available_now": 0,
+        "est_wait_min": 8,
+        "data_note": "location/type/operator fields are real & verified; total_slots/available_now/est_wait_min are DUMMY prototype values, not live data"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.83,
+          -1.27
+        ]
+      },
+      "properties": {
+        "operator": "Roam",
+        "site_name": "Roam Hub – Forest Road",
+        "infrastructure_type": "Battery swap",
+        "address_or_area": "Forest Road, Ngara/Ngara West, Nairobi",
+        "priority_weight": 2,
+        "verification_note": "Location confirmed by Roam/Electric KE; coordinates are approximate.",
+        "source_url": "https://www.roam-electric.com/charging",
+        "total_slots": 4,
+        "available_now": 1,
+        "est_wait_min": 0,
+        "data_note": "location/type/operator fields are real & verified; total_slots/available_now/est_wait_min are DUMMY prototype values, not live data"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.787,
+          -1.3
+        ]
+      },
+      "properties": {
+        "operator": "Roam",
+        "site_name": "Roam Hub – Adams Arcade",
+        "infrastructure_type": "Battery swap / charging hub",
+        "address_or_area": "Adams Arcade, Ngong Road, Nairobi",
+        "priority_weight": 2,
+        "verification_note": "Listed on Roam's current charging page; exact public street address not stated.",
+        "source_url": "https://www.roam-electric.com/charging",
+        "total_slots": 5,
+        "available_now": 4,
+        "est_wait_min": 0,
+        "data_note": "location/type/operator fields are real & verified; total_slots/available_now/est_wait_min are DUMMY prototype values, not live data"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.759,
+          -1.3
+        ]
+      },
+      "properties": {
+        "operator": "Roam",
+        "site_name": "Roam Hub – Dagoretti",
+        "infrastructure_type": "Battery swap",
+        "address_or_area": "Dagoretti, Nairobi",
+        "priority_weight": 2,
+        "verification_note": "Listed by Electric KE as operational battery-swap location; exact street address not stated.",
+        "source_url": "https://electric.ke/connector-type/battery-swap/",
+        "total_slots": 4,
+        "available_now": 4,
+        "est_wait_min": 0,
+        "data_note": "location/type/operator fields are real & verified; total_slots/available_now/est_wait_min are DUMMY prototype values, not live data"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.84,
+          -1.302
+        ]
+      },
+      "properties": {
+        "operator": "Roam",
+        "site_name": "Roam – Industrial Area HQ",
+        "infrastructure_type": "Battery swap + Type 2 charging",
+        "address_or_area": "Roam Motors, Industrial Area, Nairobi",
+        "priority_weight": 2,
+        "verification_note": "Electric KE confirms operational site and battery swap; coordinates are approximate.",
+        "source_url": "https://www.roam-electric.com",
+        "total_slots": 5,
+        "available_now": 5,
+        "est_wait_min": 0,
+        "data_note": "location/type/operator fields are real & verified; total_slots/available_now/est_wait_min are DUMMY prototype values, not live data"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.782,
+          -1.302
+        ]
+      },
+      "properties": {
+        "operator": "TotalEnergies / Roam",
+        "site_name": "TotalEnergies – Ngong Road",
+        "infrastructure_type": "Type 2 + battery swap",
+        "address_or_area": "TotalEnergies Ngong Road, Nairobi",
+        "priority_weight": 2,
+        "verification_note": "Electric KE lists battery swap; exact station pin not provided in source.",
+        "source_url": "https://electric.ke/connector-type/battery-swap/",
+        "total_slots": 8,
+        "available_now": 3,
+        "est_wait_min": 0,
+        "data_note": "location/type/operator fields are real & verified; total_slots/available_now/est_wait_min are DUMMY prototype values, not live data"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.901,
+          -1.319
+        ]
+      },
+      "properties": {
+        "operator": "BasiGo",
+        "site_name": "BasiGo – Embakasi Charging Depot",
+        "infrastructure_type": "Electric bus fast charging (CCS2; also reported GB/T)",
+        "address_or_area": "Embakasi, Nairobi",
+        "priority_weight": 3,
+        "verification_note": "BasiGo/Electric KE confirms depot; public sources identify Embakasi location. Coordinates are approximate.",
+        "source_url": "https://electric.ke/connector-type/ccs2/",
+        "total_slots": 3,
+        "available_now": 2,
+        "est_wait_min": 0,
+        "data_note": "location/type/operator fields are real & verified; total_slots/available_now/est_wait_min are DUMMY prototype values, not live data"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.889,
+          -1.293
+        ]
+      },
+      "properties": {
+        "operator": "BasiGo",
+        "site_name": "BasiGo – Buru Buru Charging Depot",
+        "infrastructure_type": "Electric bus fast charging (CCS2)",
+        "address_or_area": "Buru Buru, Nairobi",
+        "priority_weight": 3,
+        "verification_note": "Electric KE confirms 6 CCS2 connectors and up to 120 kW; coordinates are approximate.",
+        "source_url": "https://electric.ke/charging-stations/basigo-buru-buru-charging-depot/",
+        "total_slots": 2,
+        "available_now": 0,
+        "est_wait_min": 20,
+        "data_note": "location/type/operator fields are real & verified; total_slots/available_now/est_wait_min are DUMMY prototype values, not live data"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.662,
+          -1.246
+        ]
+      },
+      "properties": {
+        "operator": "BasiGo",
+        "site_name": "BasiGo – Kikuyu Charging Depot",
+        "infrastructure_type": "Electric bus fast charging (CCS2)",
+        "address_or_area": "Kikuyu, Kiambu County",
+        "priority_weight": 3,
+        "verification_note": "Included because Kikuyu is part of the Nairobi metropolitan area; coordinates are approximate.",
+        "source_url": "https://electric.ke/connector-type/ccs2/",
+        "total_slots": 3,
+        "available_now": 2,
+        "est_wait_min": 0,
+        "data_note": "location/type/operator fields are real & verified; total_slots/available_now/est_wait_min are DUMMY prototype values, not live data"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.785,
+          -1.313
+        ]
+      },
+      "properties": {
+        "operator": "Ecobodaa",
+        "site_name": "Ecobodaa – Kibera swap station",
+        "infrastructure_type": "Battery swap",
+        "address_or_area": "Kibera, Nairobi",
+        "priority_weight": 2,
+        "verification_note": "Academic/sector infrastructure review documents a manual Ecobodaa swap station in Kibera; exact street address not published.",
+        "source_url": "https://sustmob.org/PCFV/pdf/BatterySwapping_ElectricVehicleChargingInfrastracture.pdf",
+        "total_slots": 5,
+        "available_now": 1,
+        "est_wait_min": 0,
+        "data_note": "location/type/operator fields are real & verified; total_slots/available_now/est_wait_min are DUMMY prototype values, not live data"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.839,
+          -1.276
+        ]
+      },
+      "properties": {
+        "operator": "Ampersand",
+        "site_name": "Ampersand – Starehe swap station",
+        "infrastructure_type": "Battery swap",
+        "address_or_area": "Starehe, Nairobi",
+        "priority_weight": 2,
+        "verification_note": "Waze lists Ampersand Starehe Swap Station; Ampersand confirms Starehe is one of its Nairobi stations. Coordinates are approximate.",
+        "source_url": "https://www.waze.com/live-map/directions/ke/nairobi-county/nairobi/ampersand-starehe-swap-station?to=place.ChIJW0xtaWcXLxgR56hc-2De1sM",
+        "total_slots": 6,
+        "available_now": 0,
+        "est_wait_min": 8,
+        "data_note": "location/type/operator fields are real & verified; total_slots/available_now/est_wait_min are DUMMY prototype values, not live data"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7735,
+          -1.2798
+        ]
+      },
+      "properties": {
+        "operator": "eWAKA",
+        "site_name": "eWAKA Mobility – Kileleshwa operations site",
+        "infrastructure_type": "E-mobility operations/dealer site; charging/swap not publicly verified",
+        "address_or_area": "20 Othaya Road, Kileleshwa, Nairobi",
+        "priority_weight": 2,
+        "verification_note": "Included as an operator location, but I did not find sufficiently strong public evidence that this exact site is a public swap station.",
+        "source_url": "https://ewaka.org/",
+        "total_slots": 8,
+        "available_now": 1,
+        "est_wait_min": 0,
+        "data_note": "location/type/operator fields are real & verified; total_slots/available_now/est_wait_min are DUMMY prototype values, not live data"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7856,
+          -1.2957
+        ]
+      },
+      "properties": {
+        "operator": "Ampersand",
+        "site_name": "Ampersand – Hurlingham swap station",
+        "infrastructure_type": "Battery swap",
+        "address_or_area": "TotalEnergies Hurlingham, Nairobi",
+        "priority_weight": 2,
+        "verification_note": "One of Ampersand's original 2022 TotalEnergies pilot sites in Nairobi, per Ampersand/Empower Africa press coverage. Coordinates are locality-level, not a surveyed pin.",
+        "source_url": "https://empowerafrica.com/ampersand-expands-electric-motorbike-battery-swap-network-in-kenya/",
+        "total_slots": 6,
+        "available_now": 6,
+        "est_wait_min": 0,
+        "data_note": "location/type/operator fields are real & verified; total_slots/available_now/est_wait_min are DUMMY prototype values, not live data"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8027,
+          -1.2626
+        ]
+      },
+      "properties": {
+        "operator": "Unconfirmed (community-sourced)",
+        "site_name": "Sarit Centre, Westlands",
+        "infrastructure_type": "Car EV charging (AC + DC CHAdeMO)",
+        "address_or_area": "Sarit Centre, Westlands, Nairobi",
+        "priority_weight": 1,
+        "verification_note": "Listed on a community-sourced EV charger directory (fundiwaev.co.ke); operator and install date not independently confirmed. Passenger-car charging, not bus/motorcycle swap infrastructure — lower priority under the bus-first, e-bike-second framing but useful as existing-state context.",
+        "source_url": "https://www.fundiwaev.co.ke/charging_stations",
+        "total_slots": 3,
+        "available_now": 2,
+        "est_wait_min": 0,
+        "data_note": "location/type/operator fields are real & verified; total_slots/available_now/est_wait_min are DUMMY prototype values, not live data"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8078,
+          -1.2306
+        ]
+      },
+      "properties": {
+        "operator": "Unconfirmed (community-sourced)",
+        "site_name": "Village Market, Gigiri",
+        "infrastructure_type": "Car EV charging (AC)",
+        "address_or_area": "Village Market, Gigiri, Nairobi",
+        "priority_weight": 1,
+        "verification_note": "Community-sourced directory listing (fundiwaev.co.ke); operator not independently confirmed. Passenger-car charging.",
+        "source_url": "https://www.fundiwaev.co.ke/charging_stations",
+        "total_slots": 2,
+        "available_now": 2,
+        "est_wait_min": 0,
+        "data_note": "location/type/operator fields are real & verified; total_slots/available_now/est_wait_min are DUMMY prototype values, not live data"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.802,
+          -1.268
+        ]
+      },
+      "properties": {
+        "operator": "Unconfirmed (community-sourced)",
+        "site_name": "UNGA House, Westlands",
+        "infrastructure_type": "Car EV charging (Type 2)",
+        "address_or_area": "UNGA House, Westlands, Nairobi",
+        "priority_weight": 1,
+        "verification_note": "Community-sourced directory listing (fundiwaev.co.ke); operator not independently confirmed. Passenger-car charging.",
+        "source_url": "https://www.fundiwaev.co.ke/charging_stations",
+        "total_slots": 3,
+        "available_now": 0,
+        "est_wait_min": 20,
+        "data_note": "location/type/operator fields are real & verified; total_slots/available_now/est_wait_min are DUMMY prototype values, not live data"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.8172,
+          -1.2921
+        ]
+      },
+      "properties": {
+        "operator": "Unconfirmed (community-sourced)",
+        "site_name": "KCB Towers, Upper Hill",
+        "infrastructure_type": "Car EV charging (Type 2 AC)",
+        "address_or_area": "KCB Towers, Upper Hill, Nairobi",
+        "priority_weight": 1,
+        "verification_note": "Community-sourced directory listing (fundiwaev.co.ke); operator not independently confirmed. Passenger-car charging.",
+        "source_url": "https://www.fundiwaev.co.ke/charging_stations",
+        "total_slots": 2,
+        "available_now": 2,
+        "est_wait_min": 0,
+        "data_note": "location/type/operator fields are real & verified; total_slots/available_now/est_wait_min are DUMMY prototype values, not live data"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.814,
+          -1.2945
+        ]
+      },
+      "properties": {
+        "operator": "Unconfirmed (community-sourced)",
+        "site_name": "Britam Towers, Upper Hill",
+        "infrastructure_type": "Car EV charging (Type 2 AC)",
+        "address_or_area": "Britam Towers, Upper Hill, Nairobi",
+        "priority_weight": 1,
+        "verification_note": "Community-sourced directory listing (fundiwaev.co.ke); operator not independently confirmed. Passenger-car charging.",
+        "source_url": "https://www.fundiwaev.co.ke/charging_stations",
+        "total_slots": 3,
+        "available_now": 2,
+        "est_wait_min": 0,
+        "data_note": "location/type/operator fields are real & verified; total_slots/available_now/est_wait_min are DUMMY prototype values, not live data"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.789,
+          -1.287
+        ]
+      },
+      "properties": {
+        "operator": "Unconfirmed (community-sourced)",
+        "site_name": "Adlife, Kilimani",
+        "infrastructure_type": "Car EV charging (AC)",
+        "address_or_area": "Adlife, Kilimani, Nairobi",
+        "priority_weight": 1,
+        "verification_note": "Community-sourced directory listing (fundiwaev.co.ke); operator not independently confirmed. Passenger-car charging.",
+        "source_url": "https://www.fundiwaev.co.ke/charging_stations",
+        "total_slots": 4,
+        "available_now": 1,
+        "est_wait_min": 0,
+        "data_note": "location/type/operator fields are real & verified; total_slots/available_now/est_wait_min are DUMMY prototype values, not live data"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7076,
+          -1.3193
+        ]
+      },
+      "properties": {
+        "operator": "Unconfirmed (community-sourced)",
+        "site_name": "Karen (Langata Road)",
+        "infrastructure_type": "Car EV charging (AC Type 1, Type 2, DC CHAdeMO)",
+        "address_or_area": "Karen, Langata Road, Nairobi",
+        "priority_weight": 1,
+        "verification_note": "Community-sourced directory listing (fundiwaev.co.ke); operator not independently confirmed. Passenger-car charging.",
+        "source_url": "https://www.fundiwaev.co.ke/charging_stations",
+        "total_slots": 4,
+        "available_now": 0,
+        "est_wait_min": 8,
+        "data_note": "location/type/operator fields are real & verified; total_slots/available_now/est_wait_min are DUMMY prototype values, not live data"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.7382,
+          -1.2651
+        ]
+      },
+      "properties": {
+        "operator": "Roam + Ampersand",
+        "site_name": "TotalEnergies Mountain View / Waiyaki Way Hub",
+        "infrastructure_type": "Battery swap (multi-operator)",
+        "address_or_area": "TotalEnergies Mountain View, Waiyaki Way, Nairobi",
+        "priority_weight": 2,
+        "verification_note": "Co-located site: Roam Hub – Waiyaki Way and Ampersand – Mountain View swap station share this physical location; merged into one pin, not counted twice.",
+        "source_url": "https://www.roam-electric.com/charging",
+        "total_slots": 5,
+        "available_now": 2,
+        "est_wait_min": 0,
+        "data_note": "location/type/operator fields are real & verified; total_slots/available_now/est_wait_min are DUMMY prototype values, not live data"
+      }
+    }
+  ]
+}
