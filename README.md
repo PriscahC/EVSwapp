@@ -123,8 +123,17 @@ Built with **Vite + OpenLayers + Chart.js**. Serves static data from `/public/da
 - Select transit time band
 - Bar chart: site count distribution across phases
 
-### Kepler.gl Companion (Not yet built)
-High-impact animated "wow" visualization for the live demo and submitted video.
+### Kepler.gl Companion (✅ Complete)
+
+High-impact animated "wow" visualization deployed and ready for demo and submission video.
+
+**Live map:** [Kepler.gl Nairobi E-Mobility Map](https://kepler.gl/demo/map?mapUrl=https://dl.dropboxusercontent.com/scl/fi/dh68ukxm2oe2dinbzxiwi/EVSwapp-Data.json?rlkey=4hgrwhbxlhfgw17ev7r5whhnx&dl=0)
+
+**Visualization includes:**
+- H3 hexagonal grid colored by need score (light → dark blue)
+- Transit frequency dots (yellow) by time band
+- Existing infrastructure points (red/magenta) by priority tier
+- Interactive layer toggles and zoom/pan
 
 ---
 
@@ -245,9 +254,10 @@ This pipeline is **designed to be replicable for other World cities** without sp
 - ✅ **Concept** – Full 20-slide deck content drafted (see `docs/concept_deck_content.md`)
 - ✅ **Data pipeline** – All 15 scripts complete, outputs verified
 - ✅ **LLM insights backend** – Groq integration working, 20 sites cached with reasoning-token fix applied
-- 🔄 **Visualization skeleton** – Vite + OpenLayers app built, awaiting visual verification (next immediate step)
-- ⏳ **Polish & demo** – Layer styling refinement, Kepler.gl companion view, screenshot + video capture
-- ⏳ **Deck finalization** – Solution name, partner verification, impact numbers, final slide screenshots
+- ✅ **Visualization skeleton** – Vite + OpenLayers app built and verified
+- ✅ **Kepler.gl animated view** – Live, deployed, ready for demo and submission
+- 🔄 **Demo & deck polish** – Screenshot integration, final slide content, video capture
+- ⏳ **Deck finalization** – Final partner verification, embed visuals, proofread
 
 **Submission deadline: 31 Aug 2026, 11:59pm GMT**
 
